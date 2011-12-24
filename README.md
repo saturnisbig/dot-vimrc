@@ -1,6 +1,7 @@
 Maple's vim config
 ==================
 
+# Plugin Categries
 ## Code Completion
 
 * [supertab](http://github.com/ervandew/supertab) -  Perform all your vim insert mode completions with Tab.
@@ -41,13 +42,31 @@ yaourt -S ack ctags
 * `Ctrl` + `j` -> Call zen-coding expansion on html tags
 * `Alt` + `1~9` -> Switch between multiple buffers
 
-# Better syntax/indent plugin
+## Better syntax/indent plugin
 
 * [markdown](http://github.com/tpope/vim-markdown) -  Syntax highlight for Markdown text files.
 * [jquery](http://github.com/nono/jquery.vim) - 
 * [javascript](http://github.com/pangloss/vim-javascript) - 
-* [php](http://github.com/2072/PHP-Indenting-for-VIm) - 
 
-# Themes
+## Themes
 
 * bensday - A theme for vim in transparent Terminator.
+
+# Installation
+
+1. backup your old vim configuration file
+```bash
+mv ~/.vim ~/.vim.orig
+mv ~/.vimrc ~/.vimrc.orig
+```
+
+2. Clone and install this repo:
+```bash
+git clone git://github.com/humiaozuzu/dot-vimrc.git ~/.vim
+ln -s ~/.vim/vimrc ~/.vimrc 
+```
+3. Fetch submodules:
+```bash
+cd ~/.vim
+git submodule init && git submodule update
+``` 
