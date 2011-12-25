@@ -2,6 +2,11 @@ Maple's vim config
 ==================
 
 # Plugin Categries
+
+I use `pathogen` to manage my plugins, which makes my `.vim` directory clean
+and tidy. If you are new to vim, this [post](http://mirnazim.org/writings/vim-plugins-i-use/) 
+will be good for you.
+
 ## Code Completion
 
 * [supertab](http://github.com/ervandew/supertab) -  Perform all your vim insert mode completions with Tab.
@@ -9,15 +14,20 @@ Maple's vim config
 * [zencoding](http://github.com/mattn/zencoding-vim) - High speed HTML and CSS coding.
 
 ### Shortcuts
+
 * `Ctrl` + `j` -> Call zen-coding expansion on html tags
-* `Ctrl` + `o` -> Open file using Command-T
 * `Ctrl` + `k` -> expand snippets 
-smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+* `Ctrl` + `l` -> jump to the next place holder for snippets 
 
 ## Surrounding Operation
+
 * [delimitMate](http://github.com/Raimondi/delimitMate) - Provides auto-balancing and some expansions for parens, quotes, etc.
 * [matchit](http://github.com/tsaleh/vim-matchit) - Extended % matching for HTML, LaTeX, and many other languages.
 * [surround](http://github.com/tpope/vim-surround) - Easily delete, change and add such surroundings in pairs.
+
+### Tutorial
+
+* [Surrounding Operations](http://lovemaple.info/blog/2011/12/effective-vim-part2-surrounding-operations/)
 
 ## Code Reading
 
@@ -30,19 +40,23 @@ smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 ### Dependencies
 
 ```bash
-yaourt -S ack ctags
+yaourt -S ack ctags                  # ArchLinux
+sudo apt-get install ack-grep ctags  # ubuntu
 ```
 
 ### Tutorial
+
 * [Code Reading with Vim](http://lovemaple.info/blog/2011/12/effective-vim-part1-code-reading-with-vim/)
 
 ### Shortcuts
+
 * `F5` -> Toggle Nerd-Tree file viewer
 * `F6` -> Toggle tagbar
 * `Ctrl` + `j` -> Call zen-coding expansion on html tags
 * `Alt` + `1~9` -> Switch between multiple buffers
+* `Ctrl` + `h/j/k/l` -> Moving between spilt windows
 
-## Better syntax/indent plugin
+## Better syntax/indent for language enhancement 
 
 * [markdown](http://github.com/tpope/vim-markdown) -  Syntax highlight for Markdown text files.
 * [jquery](http://github.com/nono/jquery.vim) - 
@@ -70,3 +84,5 @@ ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim
 git submodule init && git submodule update
 ``` 
+
+Thst's it!

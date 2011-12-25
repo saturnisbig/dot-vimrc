@@ -72,6 +72,10 @@ let g:tagbar_sort = 0
 " Nerd Tree 
 let NERDChristmasTree=0
 let NERDTreeWinSize=30
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
 
 " ZenCoding
