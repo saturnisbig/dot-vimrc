@@ -69,7 +69,6 @@ sudo apt-get install ack-grep ctags  # ubuntu
 # Installation
 
 1. backup your old vim configuration file
-
 ```bash
 mv ~/.vim ~/.vim.orig
 mv ~/.vimrc ~/.vimrc.orig
