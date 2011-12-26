@@ -69,23 +69,18 @@ sudo apt-get install ack-grep ctags  # ubuntu
 # Installation
 
 1. backup your old vim configuration file
-```bash
-mv ~/.vim ~/.vim.orig
-mv ~/.vimrc ~/.vimrc.orig
-```
+
+        mv ~/.vim ~/.vim.orig
+        mv ~/.vimrc ~/.vimrc.orig
 
 2. Clone and install this repo:
 
-```bash
-git clone git://github.com/humiaozuzu/dot-vimrc.git ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc 
-```
+        git clone git://github.com/humiaozuzu/dot-vimrc.git ~/.vim
+        ln -s ~/.vim/vimrc ~/.vimrc 
 
 3. Fetch submodules:
 
-```bash
-cd ~/.vim
-git submodule init && git submodule update
-``` 
+        cd ~/.vim
+        git submodule init && git submodule update
 
 Thst's it!
