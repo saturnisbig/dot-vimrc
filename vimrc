@@ -13,7 +13,8 @@ syntax enable
 syntax on
 
 " color theme
-:color bensday
+color bensday
+"color ir_black
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -32,6 +33,7 @@ set pastetoggle=<F10>
 
 set history=1000
 set nocompatible
+set t_Co=256 " Explicitly tell vim that the terminal has 256 colors"
 set number      " show linenumber
 set confirm 	" prompt when existing from an unsaved file
 "set ruler
@@ -48,7 +50,7 @@ set softtabstop=4   " backspace &
 set shiftwidth=4    " indent width
 set textwidth=79
 set expandtab       " expand tab to space
-autocmd FileType html,ruby,javascript,php,css set tabstop=4 shiftwidth=2 softtabstop=2
+autocmd FileType html,haml,sass,scss,ruby,javascript,php,css set tabstop=4 shiftwidth=2 softtabstop=2
 autocmd FileType python set textwidth=0
 " JQuery syntax support
 autocmd Syntax javascript set syntax=jquery
@@ -79,7 +81,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
 
 " ZenCoding
- let g:user_zen_expandabbr_key='<C-j>'
+let g:user_zen_expandabbr_key='<C-j>'
 
 " Indent guides (default toggle key is <leader>ig)
 "let g:indent_guides_auto_colors=0
@@ -104,9 +106,11 @@ imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 
 " SuperTab
-"let g:SuperTabDefaultCompletionType="<c-n>"
-let g:SuperTabDefaultCompletionType="<C-X><C-U>"
+let g:SuperTabDefaultCompletionType="<c-n>"
+"let g:SuperTabDefaultCompletionType="<C-X><C-U>"
 "let g:SuperTabDefaultCompletionType="context"
+
+set laststatus=2 " Always show the statusline"
 
 " eggcache vim
 :command W w
@@ -115,3 +119,12 @@ let g:SuperTabDefaultCompletionType="<C-X><C-U>"
 :command Q q
 :command Qa qa
 :command QA qa
+
+" show syntax highlighting groups for word under cursor
+nmap <C-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
