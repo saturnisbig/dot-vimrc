@@ -20,14 +20,14 @@ let colors_name = "bensday"
 " Groups used in the 'highlight' and 'guicursor' options default value.
 
 hi NonText term=bold ctermfg=LightBlue
-hi ErrorMsg cterm=standout ctermbg=DarkRed ctermfg=White
+hi ErrorMsg cterm=Bold ctermfg=DarkRed ctermbg=LightGreen
 hi IncSearch cterm=reverse
 hi Search cterm=underline
 hi ModeMsg cterm=bold
 hi StatusLine cterm=reverse,bold
 hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red 
 hi StatusLineNC term=reverse cterm=reverse
-hi VertSplit cterm=reverse
+hi VertSplit ctermfg=Black ctermbg=white
 hi Visual cterm=reverse
 hi VisualNOS term=underline,bold cterm=underline,bold
 hi DiffText term=reverse cterm=bold ctermbg=Red
@@ -48,8 +48,10 @@ hi DiffDelete term=bold ctermfg=Blue ctermbg=DarkCyan gui=bold guifg=Blue guibg=
 hi CursorColumn cterm=none
 hi CursorLine cterm=underline
 hi Title cterm=bold ctermfg=LightMagenta
-:highlight Pmenu ctermbg=238 gui=bold
-
+hi Pmenu ctermbg=NONE
+hi PmenuSel cterm=bold
+hi PmenuSbar ctermbg=Black
+hi PmenuThumb ctermfg=grey
 
 " Groups for syntax highlighting
 hi String           ctermfg=green       ctermbg=NONE        cterm=bold
