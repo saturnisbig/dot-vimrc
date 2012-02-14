@@ -56,6 +56,11 @@ sudo apt-get install ack-grep ctags  # ubuntu
 * `Alt` + `1~9` -> Switch between multiple buffers
 * `Ctrl` + `h/j/k/l` -> Moving between spilt windows
 
+## Better UI
+
+* [powerline]
+* [fcitx-status]
+
 ## Better syntax/indent for language enhancement 
 
 * [markdown](http://github.com/tpope/vim-markdown) -  Syntax highlight for Markdown text files.

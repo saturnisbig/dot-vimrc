@@ -14,7 +14,6 @@ syntax on
 
 " color theme
 color bensday
-"color ir_black
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -48,7 +47,7 @@ set smartindent     " indent when
 set tabstop=8       " tab width
 set softtabstop=4   " backspace & 
 set shiftwidth=4    " indent width
-set textwidth=79
+"set textwidth=79
 set expandtab       " expand tab to space
 autocmd FileType html,haml,sass,scss,ruby,javascript,php,css set tabstop=4 shiftwidth=2 softtabstop=2
 autocmd FileType python set textwidth=0
@@ -110,6 +109,7 @@ let g:SuperTabDefaultCompletionType="<c-n>"
 "let g:SuperTabDefaultCompletionType="<C-X><C-U>"
 "let g:SuperTabDefaultCompletionType="context"
 
+" 
 set laststatus=2 " Always show the statusline"
 
 " eggcache vim

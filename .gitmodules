@@ -51,4 +51,4 @@
 	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "bundle/fcitx"]
 	path = bundle/fcitx
-	url = git://github.com/vim-scripts/fcitx.vim.git
+	url = git://github.com/humiaozuzu/fcitx-status.git
