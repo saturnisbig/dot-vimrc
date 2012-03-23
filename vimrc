@@ -13,7 +13,8 @@ syntax enable
 syntax on
 
 " color theme
-color bensday
+"color bensday
+color vividchalk
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -69,6 +70,7 @@ let g:tagbar_left=1
 let g:tagbar_width=30
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0 
+let g:tagbar_compact = 1
 
 " Nerd Tree 
 let NERDChristmasTree=0
@@ -128,3 +130,30 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" For snippet_complete marker.
+if has('conceal')
+    set conceallevel=2 concealcursor=i
+endif
+
+" for macvim
+if has("gui_running")
+    set go=aAce  " remove toolbar
+    set transparency=30
+    set guifont=Monaco:h13
+    set showtabline=2
+    set columns=140
+    set lines=40
+    noremap <D-M-Left> :tabprevious<cr>
+    noremap <D-M-Right> :tabnext<cr>
+    map <D-1> 1gt
+    map <D-2> 2gt
+    map <D-3> 3gt
+    map <D-4> 4gt
+    map <D-5> 5gt
+    map <D-6> 6gt
+    map <D-7> 7gt
+    map <D-8> 8gt
+    map <D-9> 9gt
+    map <D-0> :tablast<CR>
+endif

@@ -13,15 +13,15 @@ endif
 let colors_name = "tir_black"
 
 " General colors
-hi Normal guifg=#f6f3e8 guibg=black ctermfg=white ctermbg=black 
-hi NonText guifg=#070707 guibg=black ctermfg=232 ctermbg=none
+hi Normal guifg=#f6f3e8 guibg=black ctermfg=white ctermbg=0
+hi NonText guifg=#070707 guibg=black ctermfg=232 ctermbg=0
 
 hi Cursor guifg=black guibg=white ctermfg=0 ctermbg=15
-hi LineNr guifg=#3D3D3D guibg=black ctermfg=darkgrey ctermbg=none
+hi LineNr guifg=#3D3D3D guibg=black ctermfg=239 ctermbg=0
 
 hi VertSplit guifg=#202020 guibg=#202020 ctermfg=235 ctermbg=235 
 hi StatusLine guifg=#CCCCCC guibg=#202020 gui=italic ctermfg=235 ctermbg=254
-hi StatusLineNC guifg=blue guibg=#202020 ctermfg=darkgrey ctermbg=white
+hi StatusLineNC guifg=black guibg=#202020 ctermfg=0 ctermbg=235 
 
 hi Folded guifg=#a0a8b0 guibg=#384048 ctermfg=103 ctermbg=60
 hi Title guifg=#f6f3e8 gui=bold ctermfg=187 cterm=bold
@@ -48,15 +48,15 @@ if version >= 700 " Vim 7.x specific colors
 endif
 
 " Syntax highlighting
-hi Comment guifg=#A8FF60 ctermfg=155 
-hi String guifg=#A8FF60 ctermfg=250
-hi Number guifg=#FF73FD ctermfg=magenta
+hi Comment guifg=#7C7C7C ctermfg=8 
+hi String guifg=#A8FF60 ctermfg=155 
+hi Number guifg=#FF73FD ctermfg=207 
 
 hi Keyword guifg=#96CBFE ctermfg=117 
 hi PreProc guifg=#96CBFE ctermfg=117 
 hi Conditional guifg=#6699CC ctermfg=110 
 
-hi Todo guifg=#000000 guibg=#cae682 ctermfg=0 ctermbg=yellow
+hi Todo guifg=#000000 guibg=#cae682 ctermfg=0 ctermbg=195 
 hi Constant guifg=#99CC99 ctermfg=151 
 
 hi Identifier guifg=#C6C5FE ctermfg=189 
@@ -65,7 +65,7 @@ hi Type guifg=#FFFFB6 ctermfg=229
 hi Statement guifg=#6699CC ctermfg=110 
 
 hi Special guifg=#E18964 ctermfg=173 
-hi Delimiter guifg=#00A0A0 ctermfg=white
+hi Delimiter guifg=#00A0A0 ctermfg=37 
 hi Operator guifg=white ctermfg=white 
 
 hi link Character Constant
