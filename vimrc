@@ -3,9 +3,10 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 call pathogen#infect()
 
+" encoding dectection
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+
 " enable filetype dectection and ft specific plugin/indent
-"filetype on  
-"filetype plugin on
 filetype plugin indent on
 
 " enable syntax hightlight and completion 
@@ -13,7 +14,7 @@ syntax enable
 syntax on
 
 " color theme
-"color bensday
+"color molokai
 color vividchalk
 
 " highlight current line
@@ -28,19 +29,17 @@ set ignorecase
 set smartcase
 
 " paste codes
-set nopaste 
-set pastetoggle=<F10>
-
 set history=1000
 set nocompatible
-set t_Co=256 " Explicitly tell vim that the terminal has 256 colors"
-set number      " show linenumber
-set confirm 	" prompt when existing from an unsaved file
-"set ruler
-set showcmd 	" Show (partial) command in status line
-set mouse=a " use mouse in all modes 
-set report=0 " always report number of lines changed"
-set backspace=indent,eol,start 	" More powerful backspacing
+set t_Co=256 " Explicitly tell vim that the terminal has 256 colors "
+set number   " show linenumber
+set confirm  " prompt when existing from an unsaved file
+set ruler
+set showcmd                    " Show (partial) command in status line
+set mouse=a                    " use mouse in all modes
+set report=0                   " always report number of lines changed "
+set backspace=indent,eol,start " More powerful backspacing
+set laststatus=2               " Always show the statusline            "
 
 " Default Indentation
 set autoindent
@@ -50,15 +49,15 @@ set softtabstop=4   " backspace &
 set shiftwidth=4    " indent width
 "set textwidth=79
 set expandtab       " expand tab to space
-autocmd FileType html,haml,sass,scss,ruby,javascript,php,css set tabstop=4 shiftwidth=2 softtabstop=2
+autocmd FileType html,htmldjango,haml,sass,scss,ruby,javascript,php,css setlocal tabstop=4 shiftwidth=2 softtabstop=2
 autocmd FileType python set textwidth=0
-" JQuery syntax support
-autocmd Syntax javascript set syntax=jquery
+autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
 
 " Keybindings for plugin toggle
-"nmap <F4> :IndentGuidesToggle<cr>
 nmap <F5> :TagbarToggle<cr>
 nmap <F6> :NERDTreeToggle<cr>
+nmap <F3> :GundoToggle<cr>
+
 " easier navigation between split windows
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -71,6 +70,22 @@ let g:tagbar_width=30
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0 
 let g:tagbar_compact = 1
+" tag for coffee
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
 
 " Nerd Tree 
 let NERDChristmasTree=0
@@ -84,19 +99,16 @@ let NERDTreeWinPos = "right"
 " ZenCoding
 let g:user_zen_expandabbr_key='<C-j>'
 
-" Indent guides (default toggle key is <leader>ig)
-"let g:indent_guides_auto_colors=0
-"let g:indent_guides_start_level=2 
-"let g:indent_guides_guide_size=1
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=242
+" powerline
+"let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
-set completeopt=longest,menu
+set completeopt-=preview
 let g:neocomplcache_enable_at_startup=1
 "let g:neoComplcache_disableautocomplete=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 "imap <C-l> <Plug>(neocomplcache_snippets_expand)
@@ -106,13 +118,18 @@ smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
 " SuperTab
 let g:SuperTabDefaultCompletionType="<c-n>"
-"let g:SuperTabDefaultCompletionType="<C-X><C-U>"
-"let g:SuperTabDefaultCompletionType="context"
 
-" 
-set laststatus=2 " Always show the statusline"
+" ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,.DS_Store  " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
 " eggcache vim
 :command W w
@@ -130,11 +147,6 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
-" For snippet_complete marker.
-if has('conceal')
-    set conceallevel=2 concealcursor=i
-endif
 
 " for macvim
 if has("gui_running")
@@ -157,3 +169,4 @@ if has("gui_running")
     map <D-9> 9gt
     map <D-0> :tablast<CR>
 endif
+
