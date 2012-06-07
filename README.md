@@ -23,7 +23,7 @@ will be good for you.
 Compile vim with `--enable-pythoninterp` and `--enable-rubyinterp` to enable powerful syntax completion supplied by neocomplcache
 
 ### Screenshots
-![syntax-completion]()
+![syntax-completion](https://github.com/humiaozuzu/dot-vimrc/raw/master/screenshots/syntax-completion.png)
 
 ## Surrounding Operation
 * [delimitMate](http://github.com/Raimondi/delimitMate) - Provides auto-balancing and some expansions for parens, quotes, etc.
