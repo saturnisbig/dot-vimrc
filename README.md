@@ -60,18 +60,19 @@ brew install ack ctags               # OSX
 ### Shortcuts
 * `F5` -> Toggle Nerd-Tree file viewer
 * `F6` -> Toggle tagbar
-* `Ctrl` + `j` -> Call zen-coding expansion on html tags
+* `Ctrl` + `p` -> Toggle ctrlp
 * `Alt` + `1~9` -> Switch between multiple buffers
 * `Ctrl` + `h/j/k/l` -> Moving between spilt windows
+* `:Ack` -> Toggle Ack searching
 
 ## Better UI
-* [powerline] - The ultimate vim statusline utility
+* [powerline](https://github.com/Lokaltog/vim-powerline) - The ultimate vim statusline utility
 
 ### Screenshots
 [powerline screenshots](https://github.com/Lokaltog/vim-powerline#screenshots)
 
 ## Input method interaction
-* [fcitx-status] - automatic change status of fcitx in vim
+* [fcitx-status](https://github.com/humiaozuzu/fcitx-status) - automatic change status of fcitx in vim
 
 ## Better syntax/indent for language enhancement 
 * [markdown](http://github.com/tpope/vim-markdown) -  Syntax highlight for Markdown text files
